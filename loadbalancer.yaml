@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: front-svc
+  name: backend-svc
 spec:
   type: LoadBalancer
   selector:
-    name: frontend
+    app: backend
   ports:
     - name: http
-      port: 3000
-      targetPort: 3000
+      port: 80
+      targetPort: 8080

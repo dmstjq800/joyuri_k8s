@@ -12,9 +12,11 @@ spec:
       labels:
         name: frontend
     spec:
+      imagePullSecrets:
+        - name:  ecr-cred
       containers:
-        - name: backend-container
-          image: dmstjq800/joyuri_front:1.0
+        - name: frontend-container
+          image: 575108943098.dkr.ecr.ap-northeast-2.amazonaws.com/joyuri-frontend:c9f86dc5397629114bd8e72aea71f1bde3c4cd9d
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
